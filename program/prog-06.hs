@@ -72,15 +72,15 @@ many r  = many1 r <|> nil
 many1 r = mapP cons (r &&& many r)
   where cons (x, xs) = x : xs
 
+paren p = mapP f (sym '(' &&& p &&& sym ')')
+  where f ((_, x), _) = x
+
 -- Read instance for Var and Term.
 instance Read Var where
   readsPrec _ = variable 
 
 instance Read Term where
   readsPrec _ = term 
-
-paren p = mapP f (sym '(' &&& p &&& sym ')')
-  where f ((_, x), _) = x
 
 -- Randomly generate Var and Term for QuickCheck.
 instance Arbitrary Var where
@@ -118,10 +118,12 @@ instance Eq a => Eq (Spaced a) where
 
 instance Show a => Show (Spaced a) where
   show (Spaced x l) = spaced (show x) l
-    where spaced (x:xs) (b:bs) | b = ' ' : spaced (x:xs) bs
+    where spaced (x:xs) (b:bs) | b && notVar x xs = x : spaced (' ' : xs) bs
                                | otherwise = x : spaced xs bs
           spaced xs [] = xs
           spaced [] _  = []
+          notVar x []    = True
+          notVar x (y:_) = not (isAlphaNum x && isDigit y)
 
 instance Read a => Read (Spaced a) where
   readsPrec = mapP f . readsPrec 
