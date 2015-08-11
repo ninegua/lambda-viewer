@@ -18,6 +18,7 @@ English translation is planned, but not yet written.
 * [（四）语法识别器、高阶函数和列表推导](http://a.haskellcn.org/topic/501db01e68995699130648d5)
 * [（五）语法识别器的拼接与组合](http://a.haskellcn.org/topic/504793ecc19c6ba851069186)
 * [（六）如何正确识别λ表达式](http://a.haskellcn.org/topic/51d4a2a198942416ea00000a)
+* [（七）从形式语义到等价关系](http://a.haskellcn.org/topic/55ca88129894244992000009)
 
 [Lambda Viewer]: http://projectultimatum.org/cgi-bin/lambda
 [HaskellCN Forum]: http://a.haskellcn.org

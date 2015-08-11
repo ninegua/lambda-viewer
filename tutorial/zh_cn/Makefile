@@ -8,7 +8,8 @@ SRCS=00-preface.md \
 	 03-induction.md \
 	 04-parser.md \
 	 05-parser-combinator.md \
-	 06-lambda-parser.md
+	 06-lambda-parser.md \
+	 07-alpha-conversion.md
 
 default:   
 	@echo Use 'make <doc>.open' or 'make <doc>.png'
