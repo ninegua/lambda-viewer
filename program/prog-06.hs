@@ -91,12 +91,14 @@ instance Arbitrary Var where
     return $ V $ if c then [f] else f : show d
 
 instance Arbitrary Term where
-  arbitrary = do
-    i <- choose (0::Int, 2)
-    case i of
-      0 -> Lam <$> arbitrary <*> arbitrary
-      1 -> App <$> arbitrary <*> arbitrary
-      _ -> Var <$> arbitrary
+  arbitrary = sized term
+    where
+      term 0 = Var <$> arbitrary
+      term n = oneof [ Var <$> arbitrary,
+                       Lam <$> arbitrary <*> term (n-1),
+                       App <$> term m <*> term m ]
+        where m = n `div` 2
+
 
 -- Show, Read, Arbitrary instances for Pretty 
 data Pretty = Pretty Term deriving Eq
