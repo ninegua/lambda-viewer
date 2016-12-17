@@ -1,7 +1,7 @@
 lambda-viewer
 =============
 
-"Learn You a Lambda, a Haskell Tutorial" is a set of articles that shows you how to build an online [Lambda Viewer], step by step. 
+"Learn You a Lambda, a Haskell Tutorial" is a series that shows you how to build an online [Lambda Viewer], step by step. It is meant to be a supplement material to beginners who are already learning Haskell and/or Lambda Calculus from other sources.
 
 Each chapter will be written in both Chinese and English, completed with exercises and sample programs.
 
@@ -19,6 +19,7 @@ English translation is planned, but not yet written.
 * [（五）语法识别器的拼接与组合](http://a.haskellcn.org/topic/504793ecc19c6ba851069186)
 * [（六）如何正确识别λ表达式](http://a.haskellcn.org/topic/51d4a2a198942416ea00000a)
 * [（七）从形式语义到等价关系](http://a.haskellcn.org/topic/55ca88129894244992000009)
+* [（八）替换与归约](http://a.haskellcn.org/topic/5854e3a59894241c11000000)
 
 [Lambda Viewer]: http://projectultimatum.org/cgi-bin/lambda
 [HaskellCN Forum]: http://a.haskellcn.org
