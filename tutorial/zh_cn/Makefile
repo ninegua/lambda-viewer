@@ -9,7 +9,8 @@ SRCS=00-preface.md \
 	 04-parser.md \
 	 05-parser-combinator.md \
 	 06-lambda-parser.md \
-	 07-alpha-conversion.md
+	 07-alpha-conversion.md \
+	 08-beta-reduction.md
 
 default:   
 	@echo Use 'make <doc>.open' or 'make <doc>.png'
